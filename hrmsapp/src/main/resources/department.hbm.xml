@@ -6,7 +6,7 @@
 <hibernate-mapping>
 	<class name="hrmsapp.data.Department" table="department">
 		<id name="deptNo">
-			<generator class="native"></generator>
+			<generator class="identity"></generator>
 		</id>
 
 		<property name="deptName" />
