@@ -8,24 +8,28 @@ import hrmsappwithannotation.data.Department;
 import hrmsappwithannotation.utility.HibernateUtility;
 
 public class DepartmentDAOImpl implements DepartmentDAO {
-
+	Session session = HibernateUtility.getSessionFactory().openSession();
 	@Override
 	public List<Department> getAllDepartment() {
-
-		return null;
+			//select * from department
+		return session.createQuery("select d from Department d",Department.class).getResultList();
 	}
 
 	@Override
 	public Department getDepartmentById(Integer deptNo) {
-		Session session = HibernateUtility.getSessionFactory().openSession();
-
 		session.beginTransaction();
-		// Department dept = new Department();
-		// dept.setDeptName("IT");
-		// session.persist(dept);
 		Department dept = session.get(Department.class, deptNo);
 		session.getTransaction().commit();
 		return dept;
+	}
+
+	@Override
+	public void addDepartment(Department department) {
+		session.beginTransaction();
+		
+		session.persist(department);
+		session.getTransaction().commit();
+		
 	}
 
 }

@@ -7,17 +7,24 @@ import hrmsappwithannotation.dao.DepartmentDAOImpl;
 import hrmsappwithannotation.data.Department;
 
 public class DepartmentServiceImpl implements DepartmentService {
+	DepartmentDAO departmentDao = new DepartmentDAOImpl();
 
 	@Override
 	public List<Department> getAllDepartment() {
-		DepartmentDAO departmentDao = new DepartmentDAOImpl();
 		return departmentDao.getAllDepartment();
 	}
 
 	@Override
 	public Department getDepartmentById(Integer deptNo) {
-		DepartmentDAO departmentDao = new DepartmentDAOImpl();
+
 		return departmentDao.getDepartmentById(deptNo);
+	}
+
+	@Override
+	public void addDepartment(Department department) {
+
+		departmentDao.addDepartment(department);
+
 	}
 
 }
