@@ -9,4 +9,7 @@ public interface DepartmentService {
 	public Department getDepartmentById(Integer deptNo);
 	
 	public void addDepartment(Department department);
+	public Department updateDepartment(Department department);
+	public void deleteDepartment(Integer deptNo);
+	public Department getDepartmentByName(String deptName);
 }

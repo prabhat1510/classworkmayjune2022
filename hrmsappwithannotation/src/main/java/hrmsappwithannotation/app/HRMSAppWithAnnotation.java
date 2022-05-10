@@ -15,6 +15,8 @@ public class HRMSAppWithAnnotation {
 		departmentService.addDepartment(department);
 		
 		System.out.println(departmentService.getAllDepartment());
+		
+		System.out.println(departmentService.getDepartmentByName("IT"));
 	}
 
 }

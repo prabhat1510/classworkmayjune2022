@@ -27,4 +27,22 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	}
 
+	@Override
+	public Department updateDepartment(Department department) {
+		// TODO Auto-generated method stub
+		return departmentDao.updateDepartment(department);
+	}
+
+	@Override
+	public void deleteDepartment(Integer deptNo) {
+		departmentDao.deleteDepartment(deptNo);
+		
+	}
+
+	@Override
+	public Department getDepartmentByName(String deptName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
