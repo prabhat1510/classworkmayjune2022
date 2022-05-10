@@ -12,7 +12,9 @@
 		<property name="firstName" />
 		<property name="lastName" />
 		<property name="salary" />
-		<property name="department" />
+		<many-to-one name="department" class="hrmsapp.data.Department"  cascade="all">
+      <column name="department"/>
+    </many-to-one>
 	</class>
 
 </hibernate-mapping>
