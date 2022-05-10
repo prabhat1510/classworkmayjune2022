@@ -13,7 +13,7 @@
 		<property name="lastName" />
 		<property name="salary" />
 		<many-to-one name="department" class="hrmsapp.data.Department"  cascade="all">
-      <column name="department"/>
+      <column name="deptNo"/>
     </many-to-one>
 	</class>
 
