@@ -13,4 +13,5 @@ public interface DepartmentDAO {
 	public void deleteDepartment(Integer deptNo);
 	
 	public Department getDepartmentByName(String deptName);
+	public Integer updateDepartmentUsingQuery(Department department);
 }

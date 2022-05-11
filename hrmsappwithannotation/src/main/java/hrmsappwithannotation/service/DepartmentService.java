@@ -12,4 +12,5 @@ public interface DepartmentService {
 	public Department updateDepartment(Department department);
 	public void deleteDepartment(Integer deptNo);
 	public Department getDepartmentByName(String deptName);
+	public Integer updateDepartmentUsingQuery(Department department);
 }

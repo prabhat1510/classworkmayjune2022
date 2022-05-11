@@ -45,4 +45,10 @@ public class DepartmentServiceImpl implements DepartmentService {
 		return null;
 	}
 
+	@Override
+	public Integer updateDepartmentUsingQuery(Department department) {
+			
+		return departmentDao.updateDepartmentUsingQuery(department);
+	}
+
 }
