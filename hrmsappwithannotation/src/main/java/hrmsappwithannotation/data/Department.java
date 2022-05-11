@@ -4,8 +4,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+
+@NamedQueries(  
+	    {  
+	        @NamedQuery(  
+	        name = "findDepartmentByName",  
+	        query = "from Department d where d.deptName = :name"  
+	        )  
+	    }  
+	)  
 //Persistent class 
 @Entity
 @Table(name="department_info")

@@ -1,6 +1,9 @@
 package hrmsappwithannotation.dao;
 
+import java.util.Iterator;
 import java.util.List;
+
+import javax.persistence.TypedQuery;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -67,8 +70,11 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 
 	@Override
 	public Department getDepartmentByName(String deptName) {
-		// TODO Auto-generated method stub
-		return null;
+		TypedQuery query = session.getNamedQuery("findDepartmentByName");
+		query.setParameter("name", deptName);
+
+		Department department = (Department) query.getSingleResult();
+		return department;
 	}
 
 	@Override
@@ -76,15 +82,26 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 		String query = "Update Department SET deptName=:dName WHERE deptNo=:deptId ";
 		session.getTransaction().begin();
 		Query q = session.createQuery(query);
-		q.setParameter("dName",department.getDeptName());
+		q.setParameter("dName", department.getDeptName());
 		q.setParameter("deptId", department.getDeptNo());
 		int row = q.executeUpdate();
 		session.getTransaction().commit();
-		if(row>0) {
+		if (row > 0) {
 			return row;
 		}
-		
+
 		return null;
+	}
+
+	@Override
+	public void deleteDepartmentByName(String deptName) {
+		String query = "DELETE Department WHERE deptName=:dName";
+		session.getTransaction().begin();
+		Query q = session.createQuery(query);
+		q.setParameter("dName", deptName);
+		int row = q.executeUpdate();
+		session.getTransaction().commit();
+		
 	}
 
 }

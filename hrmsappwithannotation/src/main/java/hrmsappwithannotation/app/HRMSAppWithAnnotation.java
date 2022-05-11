@@ -33,8 +33,10 @@ public class HRMSAppWithAnnotation {
 		System.out.println(departmentService.updateDepartmentUsingQuery(depart));
 		
 		//Delete
-		departmentService.deleteDepartment(2);
+		//departmentService.deleteDepartment(2);
 		
+		//Get department by name
+		System.out.println(departmentService.getDepartmentByName("Admin"));
 	}
 
 }

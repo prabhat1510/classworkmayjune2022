@@ -41,14 +41,19 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	@Override
 	public Department getDepartmentByName(String deptName) {
-		// TODO Auto-generated method stub
-		return null;
+			return departmentDao.getDepartmentByName(deptName);
 	}
 
 	@Override
 	public Integer updateDepartmentUsingQuery(Department department) {
 			
 		return departmentDao.updateDepartmentUsingQuery(department);
+	}
+
+	@Override
+	public void deleteDepartmentByName(String deptName) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
