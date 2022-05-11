@@ -70,14 +70,15 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 	public Integer updateDepartmentUsingQuery(Department department) {
 		String query = "Update Department SET deptName=:dName WHERE deptNo=:deptId ";
 		session.getTransaction().begin();
-		Query q = session.createSQLQuery(query);
+		Query q = session.createQuery(query);
 		q.setParameter("dName",department.getDeptName());
 		q.setParameter("deptId", department.getDeptNo());
 		int row = q.executeUpdate();
+		session.getTransaction().commit();
 		if(row>0) {
 			return row;
 		}
-		session.getTransaction().commit();
+		
 		return null;
 	}
 
