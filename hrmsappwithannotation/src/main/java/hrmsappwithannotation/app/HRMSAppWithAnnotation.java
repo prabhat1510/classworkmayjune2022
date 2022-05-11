@@ -31,7 +31,9 @@ public class HRMSAppWithAnnotation {
 		depart.setDeptName("Sales");
 		depart.setDeptNo(5);
 		System.out.println(departmentService.updateDepartmentUsingQuery(depart));
-	
+		
+		//Delete
+		departmentService.deleteDepartment(2);
 		
 	}
 

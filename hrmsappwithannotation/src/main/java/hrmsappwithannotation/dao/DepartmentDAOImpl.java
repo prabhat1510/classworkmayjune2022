@@ -57,6 +57,11 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 	public void deleteDepartment(Integer deptNo) {
 		// TODO Auto-generated method stub
 		// remove
+		session.getTransaction().begin();
+		Department d = new Department();
+		d.setDeptNo(deptNo);
+		session.delete(d);
+		session.getTransaction().commit();
 
 	}
 
