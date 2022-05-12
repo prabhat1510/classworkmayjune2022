@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>List of all companies</title>
+</head>
+<body>
+<div th:each="comp: ${allCompanies}">
+		<span th:text="${comp.companyId}"/> --<span th:text="${comp.name}"/>
+	</div>
+</body>
+</html>
