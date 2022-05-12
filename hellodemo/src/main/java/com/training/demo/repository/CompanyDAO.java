@@ -1,5 +1,5 @@
 package com.training.demo.repository;
-
+/**
 import java.util.List;
 
 import com.training.demo.entities.Company;
@@ -10,3 +10,4 @@ public interface CompanyDAO {
 		public String addCompany(Company company);
 
 }
+**/

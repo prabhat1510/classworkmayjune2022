@@ -1,5 +1,5 @@
 package com.training.demo.repository;
-
+/**
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -28,3 +28,4 @@ public class CompanyDAOImpl implements CompanyDAO {
 	}
 
 }
+**/

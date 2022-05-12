@@ -1,12 +1,20 @@
 package com.training.demo.entities;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
-@Component
+@Entity
 public class Location {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer locationId;
-	@Autowired
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="address_id")
 	private Address address;
 	public Location() {
 		// TODO Auto-generated constructor stub

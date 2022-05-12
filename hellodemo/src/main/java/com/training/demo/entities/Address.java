@@ -1,10 +1,16 @@
 package com.training.demo.entities;
 
-import org.springframework.stereotype.Component;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Component
+@Entity
+@Table(name="company_address")
 public class Address {
-	
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Integer addressId;
 	private String  street;
 	private String  city;

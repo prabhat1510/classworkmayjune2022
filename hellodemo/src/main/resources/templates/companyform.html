@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Company Form</title>
+</head>
+<body>
+<!-- we use *  to POST data and  $ to GET data i.e. *{varName} & i${varName}  -->
+	<form action="#" th:action="@{/savecompany}" th:object="${company}" method="post">
+		<p>Company Name : <input type="text" th:field="*{name}"/></p>
+s		<p><input type="submit" value="Submit"/></p>
+	</form>
+	
+	<form action="#" th:action="@{/deletecompany}" th:object="${company}" method="delete">
+		<p>Company Id: <input type="text" th:field="*{companyId}"/></p>
+		<p>Company Name : <input type="text" th:field="*{name}"/></p>
+		<p><input type="submit" value="Delete"/></p>
+	</form>
+</body>
+</html>
