@@ -8,4 +8,8 @@ public interface CompanyService {
 	public List<Company> getAllCompanies();
 	public Company getCompnayById(Integer id);
 	public String addCompany(Company company);
+	
+	public Company getCompanyByName(String name);
+	
+	public Company getCompanyByIdAndLocationId(Integer id,Integer locId);
 }
