@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties.View;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -145,4 +147,22 @@ public class CompanyController {
 		return modelAndView;
 	}
 	
+	//http://localhost:8080/deletecompany/1
+	@GetMapping("/deletecompany/{id}")
+	public ModelAndView deleteCompanyById(@PathVariable Integer id) {
+		companyService.deleteCompany(id);	
+	    Map<String,String> model = new HashMap<String, String>();
+	    model.put("deletesuccess", "Company deleted successfully");
+	    ModelAndView modelAndView = new ModelAndView("delete",model);
+	    return modelAndView;
+	}
+	//http://localhost:8080/deletecompanyusingdeletemethod/2
+	@DeleteMapping("/deletecompanyusingdeletemethod/{id}")
+	public ModelAndView deletecompanyusingdeletemethod(@PathVariable Integer id) {
+		companyService.deleteCompany(id);	
+	    Map<String,String> model = new HashMap<String, String>();
+	    model.put("deletesuccess", "Company deleted successfully");
+	    ModelAndView modelAndView = new ModelAndView("delete",model);
+	    return modelAndView;
+	}
 }

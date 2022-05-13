@@ -12,4 +12,6 @@ public interface CompanyService {
 	public Company getCompanyByName(String name);
 	
 	public Company getCompanyByIdAndLocationId(Integer id,Integer locId);
+	
+	public void deleteCompany(Integer id);
 }

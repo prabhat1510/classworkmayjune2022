@@ -54,4 +54,9 @@ public class CompanyServiceImpl implements CompanyService {
 		return company;
 	}
 
+	@Override
+	public void  deleteCompany(Integer id) {
+		repository.deleteById(id);
+	}
+
 }
