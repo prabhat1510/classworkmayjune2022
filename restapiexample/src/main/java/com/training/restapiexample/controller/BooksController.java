@@ -18,35 +18,17 @@ import com.training.restapiexample.entities.Book;
 import com.training.restapiexample.service.BookService;
 //URL -- http://localhost:8080/api/v1/book
 @RestController
-@RequestMapping(value="/api/v1/book")
-public class BookController {
+public class BooksController {
 
 	@Autowired
 	BookService bookService;
-	
-	//Create
-	@PostMapping("/addbook")
-	public Book addBook(@RequestBody Book book) {
-		return bookService.addBook(book);
-	}
-	//Retrieve
-	@GetMapping("/{bookId}")
-	public Book retrieveBook(@PathVariable Integer bookId) {
 		
-		return bookService.retrieveBook(bookId);
-	}
-	//Delete
-	@DeleteMapping("/removebook/{bookId}")
-	public String deleteBook(@PathVariable Integer bookId) {
-		
-		return bookService.deleteBook(bookId);
-	}
-	
-	//Update
-	@PutMapping("/updatebook")
-	public String updateBoook(@RequestBody Book book) {
-		return bookService.updateBoook(book);
-	}
-	
-		
+	//Receiving data from client
+	@RequestMapping(value="/api/v2/book/allbooks", 
+				method=RequestMethod.GET,
+				consumes= {MediaType.APPLICATION_XML_VALUE},
+				produces={MediaType.APPLICATION_XML_VALUE})
+		public List<Book> getBooks(){
+			return bookService.getAllBooks();
+		}
 }

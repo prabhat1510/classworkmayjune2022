@@ -1,5 +1,6 @@
 package com.training.restapiexample.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,12 @@ public class BookServiceImpl implements BookService {
 			return "Book with bookId ---" + book.getBookId() + "  cannot be update as it doesn't exists";
 		}
 
+	}
+
+	@Override
+	public List<Book> getAllBooks() {
+		
+		return (List<Book>) bookRepository.findAll();
 	}
 
 }
