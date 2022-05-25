@@ -16,31 +16,30 @@ create table oauth_client_details (
 );
 create table oauth_client_token (
   token_id VARCHAR(256),
-  token VARBINARY(256),
+  token LONGBLOB,
   authentication_id VARCHAR(256) PRIMARY KEY,
   user_name VARCHAR(256),
   client_id VARCHAR(256)
 );
 
-
 create table oauth_access_token (
   token_id VARCHAR(256),
-  token VARBINARY(256),
+  token LONGBLOB,
   authentication_id VARCHAR(256) PRIMARY KEY,
   user_name VARCHAR(256),
   client_id VARCHAR(256),
-  authentication VARBINARY(256),
+  authentication LONGBLOB,
   refresh_token VARCHAR(256)
 );
 
 create table oauth_refresh_token (
   token_id VARCHAR(256),
-  token VARBINARY(256),
-  authentication VARBINARY(256)
+  token LONGBLOB,
+  authentication LONGBLOB
 );
 
 create table oauth_code (
-  code VARCHAR(256), authentication VARBINARY(256)
+  code VARCHAR(256), authentication LONGBLOB
 );
 
 create table oauth_approvals (
@@ -51,6 +50,7 @@ create table oauth_approvals (
 	expiresAt TIMESTAMP,
 	lastModifiedAt TIMESTAMP
 );
+
 
 INSERT INTO OAUTH_CLIENT_DETAILS(CLIENT_ID, RESOURCE_IDS, CLIENT_SECRET, SCOPE, AUTHORIZED_GRANT_TYPES, AUTHORITIES, ACCESS_TOKEN_VALIDITY, REFRESH_TOKEN_VALIDITY)
  VALUES ('spring-security-oauth2-read-client', 'resource-server-rest-api',
