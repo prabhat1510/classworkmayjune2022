@@ -102,22 +102,17 @@ public class User implements UserDetails {
 		this.authorities = authorities;
 	}
 
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public String getPassword() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public String getUsername() {
-		// TODO Auto-generated method stub
-		return null;
+		return username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return (Collection<? extends GrantedAuthority>) authorities;
 	}
 
 	@Override
