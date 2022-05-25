@@ -130,11 +130,10 @@ public class User implements UserDetails {
 		return !isCredentialsExpired();
 	}
 
-	@Override
 	public boolean isEnabled() {
-	
-		return !isEnabled();
+		return enabled;
 	}
+
 	
 	
 }
